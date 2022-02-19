@@ -18,8 +18,6 @@ class RegisterScreenController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
     }
     
     @IBAction func registerButtonPressed(_ sender: UIButton) {

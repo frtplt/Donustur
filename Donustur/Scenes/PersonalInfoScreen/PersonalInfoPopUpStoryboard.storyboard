@@ -15,34 +15,76 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhh-oD-sKc">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhh-oD-sKc">
                                 <rect key="frame" x="20" y="257" width="374" height="388"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Telefon Numarası Giriniz" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="stQ-EZ-8ti">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Telefon Numarası Giriniz" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="stQ-EZ-8ti">
                                         <rect key="frame" x="8" y="144" width="358" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="stQ-EZ-8ti" secondAttribute="height" multiplier="179:30" id="Ux8-Wi-trg"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Soyadınızı Giriniz" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZG3-h5-my5">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Soyadınızı Giriniz" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZG3-h5-my5">
                                         <rect key="frame" x="8" y="76" width="358" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ZG3-h5-my5" secondAttribute="height" multiplier="179:30" id="qDX-ny-tPk"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Adınızı Giriniz" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k5f-30-dFK">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Adınızı Giriniz" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k5f-30-dFK">
                                         <rect key="frame" x="8" y="8" width="358" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="k5f-30-dFK" secondAttribute="height" multiplier="179:30" id="pj1-YA-n0W"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oE-lg-QOs">
-                                        <rect key="frame" x="123" y="296" width="127" height="69"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oE-lg-QOs">
+                                        <rect key="frame" x="36" y="305" width="126" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="126" id="48n-47-KGL"/>
+                                            <constraint firstAttribute="height" constant="55" id="vgC-g9-SGp"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="İptal">
+                                                    <attributes>
+                                                        <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="EhK-C9-PLU"/>
+                                        </connections>
+                                    </button>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="8hS-Dv-cr3">
+                                        <rect key="frame" x="8" y="212" width="358" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="8hS-Dv-cr3" secondAttribute="height" multiplier="179:30" id="iXp-1k-UNf"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="dateSelectedFromDatePicker:" destination="Y6W-OH-hqX" eventType="valueChanged" id="S8K-Cd-wSj"/>
+                                        </connections>
+                                    </datePicker>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hc4-5O-oom">
+                                        <rect key="frame" x="210" y="305" width="126" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="126" id="mYh-Cq-KFY"/>
+                                            <constraint firstAttribute="height" constant="55" id="xu9-5Y-c5e"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled">
                                             <attributedString key="attributedTitle">
@@ -58,23 +100,44 @@
                                             <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="saveButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7wF-v9-gwV"/>
+                                            <action selector="saveButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6ob-xC-s2h"/>
                                         </connections>
                                     </button>
-                                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="8hS-Dv-cr3">
-                                        <rect key="frame" x="8" y="212" width="358" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <action selector="dateSelectedFromDatePicker:" destination="Y6W-OH-hqX" eventType="valueChanged" id="S8K-Cd-wSj"/>
-                                        </connections>
-                                    </datePicker>
                                 </subviews>
                                 <color key="backgroundColor" red="0.49016976359999997" green="0.63535863159999995" blue="0.28975033760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Hc4-5O-oom" secondAttribute="trailing" constant="38" id="3i2-zI-ze6"/>
+                                    <constraint firstItem="8hS-Dv-cr3" firstAttribute="leading" secondItem="nhh-oD-sKc" secondAttribute="leading" constant="8" id="4jQ-Qz-0WM"/>
+                                    <constraint firstItem="k5f-30-dFK" firstAttribute="top" secondItem="nhh-oD-sKc" secondAttribute="top" constant="8" id="7Wu-9k-jaW"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hc4-5O-oom" secondAttribute="bottom" constant="28" id="Fv2-ud-08j"/>
+                                    <constraint firstItem="ZG3-h5-my5" firstAttribute="top" secondItem="k5f-30-dFK" secondAttribute="bottom" constant="8" symbolic="YES" id="IC7-kp-pKh"/>
+                                    <constraint firstItem="stQ-EZ-8ti" firstAttribute="leading" secondItem="nhh-oD-sKc" secondAttribute="leading" constant="8" id="KSL-BQ-Je5"/>
+                                    <constraint firstAttribute="trailing" secondItem="9oE-lg-QOs" secondAttribute="trailing" constant="212" id="KrI-an-Smp"/>
+                                    <constraint firstAttribute="width" secondItem="nhh-oD-sKc" secondAttribute="height" multiplier="187:194" id="OeQ-Rk-qTZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZG3-h5-my5" secondAttribute="trailing" constant="8" id="Q18-e7-C3V"/>
+                                    <constraint firstAttribute="trailing" secondItem="stQ-EZ-8ti" secondAttribute="trailing" constant="8" id="R8R-Vk-xvr"/>
+                                    <constraint firstItem="9oE-lg-QOs" firstAttribute="leading" secondItem="nhh-oD-sKc" secondAttribute="leading" constant="36" id="YJu-us-5M7"/>
+                                    <constraint firstAttribute="trailing" secondItem="8hS-Dv-cr3" secondAttribute="trailing" constant="8" id="ZkA-Rh-R72"/>
+                                    <constraint firstItem="Hc4-5O-oom" firstAttribute="leading" secondItem="9oE-lg-QOs" secondAttribute="trailing" constant="48" id="a4Z-PP-1nc"/>
+                                    <constraint firstItem="k5f-30-dFK" firstAttribute="leading" secondItem="nhh-oD-sKc" secondAttribute="leading" constant="8" id="bOG-ov-9jR"/>
+                                    <constraint firstItem="ZG3-h5-my5" firstAttribute="leading" secondItem="nhh-oD-sKc" secondAttribute="leading" constant="8" id="dDa-bi-nip"/>
+                                    <constraint firstAttribute="trailing" secondItem="k5f-30-dFK" secondAttribute="trailing" constant="8" id="huq-3E-OJC"/>
+                                    <constraint firstItem="8hS-Dv-cr3" firstAttribute="top" secondItem="stQ-EZ-8ti" secondAttribute="bottom" constant="8" symbolic="YES" id="it5-Oc-3uD"/>
+                                    <constraint firstItem="Hc4-5O-oom" firstAttribute="top" relation="lessThanOrEqual" secondItem="8hS-Dv-cr3" secondAttribute="bottom" constant="33" id="jKK-XT-sxJ"/>
+                                    <constraint firstItem="stQ-EZ-8ti" firstAttribute="top" secondItem="ZG3-h5-my5" secondAttribute="bottom" constant="8" symbolic="YES" id="jhW-rs-M8h"/>
+                                    <constraint firstItem="9oE-lg-QOs" firstAttribute="top" relation="lessThanOrEqual" secondItem="8hS-Dv-cr3" secondAttribute="bottom" constant="33" id="wpJ-HG-EQ1"/>
+                                    <constraint firstAttribute="bottom" secondItem="9oE-lg-QOs" secondAttribute="bottom" constant="28" id="z6e-J4-FvD"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.6104097682119205" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nhh-oD-sKc" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="213" id="LDa-Db-Il2"/>
+                            <constraint firstItem="nhh-oD-sKc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Xr5-H9-y6m"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="nhh-oD-sKc" secondAttribute="bottom" constant="217" id="aLb-OZ-Ev3"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="nhh-oD-sKc" secondAttribute="trailing" constant="20" id="eIF-Pj-Hnz"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="addBirtdayDate" destination="8hS-Dv-cr3" id="Bck-6W-S1I"/>

@@ -16,10 +16,11 @@ class AddItemScreenController: UIViewController {
     @IBOutlet var addItemAmount: UITextField!
     
     let db = Firestore.firestore()
-
+    
     var category = ""
     var date = ""
     var categories = ["Kağıt","Pil","Plastik","Yağ","Cam","Tıbbi"]
+    var ıtemScore = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +29,31 @@ class AddItemScreenController: UIViewController {
     }
     
     @IBAction func dateSelectedFromDatePicker (_ : AnyObject) {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd-MMM-yyyy"
-            date = dateFormatter.string(from: addDatePickerView.date)
-        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MMM-yyyy"
+        date = dateFormatter.string(from: addDatePickerView.date)
+    }
     
     func setupUI() {
         addItemPickerView.delegate = self
         addItemPickerView.dataSource = self
+    }
+    
+    func setup() {
+        ıtemScore = Double(addItemAmount.text!) ?? 0.0
+        if category == "Kağıt" {
+            ıtemScore = Double(addItemAmount.text!)! * 10
+        } else if category == "Pil" {
+            ıtemScore = Double(addItemAmount.text!)! * 2
+        } else if category == "Plastik" {
+            ıtemScore = Double(addItemAmount.text!)! * 10
+        } else if category == "Yağ" {
+            ıtemScore = Double(addItemAmount.text!)! * 10
+        } else if category == "Cam" {
+            ıtemScore = Double(addItemAmount.text!)! * 4
+        } else if category == "Tıbbi" {
+            ıtemScore = Double(addItemAmount.text!)! * 0.5
+        }
     }
     
     @IBAction func addItemButtonPressed(_ sender: UIButton) {
@@ -44,13 +62,14 @@ class AddItemScreenController: UIViewController {
         var ıtemCategory = category
         var ıtemDate = date
         var ıtemSender = "\(Auth.auth().currentUser?.email)"
-        var ıtemScore = Double(addItemAmount.text!) ?? 0.0
-        
+        setup()
+    
         db.collection("Items").addDocument(data: ["ItemAmount" : ıtemAmount,
                                                   "ItemCategory" : ıtemCategory,
                                                   "ItemDate" : ıtemDate,
                                                   "ItemSender" : ıtemSender,
-                                                  "ItemScore" : ıtemScore
+                                                  "ItemScore" : ıtemScore,
+                                                  
                                                  ]) { error in
             if let e = error {
                 self.showError(message: "There was an issue saving Firestore")

@@ -16,3 +16,14 @@ struct PersonModel {
     let phoneNumber: String
     
 }
+
+struct PersonModelMapInfo {
+    
+    let locationLatitude: Double
+    let locationLongitude: Double
+}
+
+struct PersonTotalScore {
+    
+    let totalScore: Double
+}

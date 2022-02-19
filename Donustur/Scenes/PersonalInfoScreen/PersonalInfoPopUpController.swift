@@ -30,6 +30,11 @@ class PersonalInfoPopUpController: UIViewController {
             date = dateFormatter.string(from: addBirtdayDate.date)
         }
     
+    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         
         var personName = nameTextField.text
