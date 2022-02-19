@@ -1,0 +1,6 @@
+framework module Pods_Donustur {
+  umbrella header "Pods-Donustur-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,12 @@
+project '/Users/firat/Desktop/iOS Projects/Donustur/Donustur.xcodeproj'
+
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Donustur' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Donustur
+
+end
