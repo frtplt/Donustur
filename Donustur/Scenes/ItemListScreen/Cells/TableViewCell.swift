@@ -1,5 +1,5 @@
 //
-//  AddItemTableViewCell.swift
+//  TableViewCell.swift
 //  Donustur
 //
 //  Created by Firat on 19.02.2022.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-class AddItemTableViewCell: UITableViewCell {
+class TableViewCell: UITableViewCell {
 
-    @IBOutlet var atıkKategoriLabel: UILabel!
-    @IBOutlet var atıkTarihLabel: UILabel!
-    @IBOutlet var atıkMiktarLabel: UILabel!
-    @IBOutlet var atıkPuanLabel: UILabel!
-
+    @IBOutlet weak var puanLabel: UILabel!
+    @IBOutlet weak var miktarLabel: UILabel!
+    @IBOutlet weak var tarihLabel: UILabel!
+    @IBOutlet weak var kategoryLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

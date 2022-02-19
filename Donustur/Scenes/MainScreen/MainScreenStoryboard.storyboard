@@ -9,6 +9,14 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--MapScreenStoryboard-->
+        <scene sceneID="gkF-vQ-Xy6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MapScreenStoryboard" id="GDA-fF-hKn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Skn-NH-pdQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-360" y="-175"/>
+        </scene>
         <!--Main Screen View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
@@ -36,6 +44,9 @@
                                             <backgroundConfiguration key="background"/>
                                             <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="23"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="GDA-fF-hKn" kind="presentation" modalPresentationStyle="fullScreen" id="5GZ-st-Ej3"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3P-vc-r7k">
                                         <rect key="frame" x="75" y="0.0" width="223" height="54"/>
@@ -236,7 +247,7 @@
                 <viewControllerPlaceholder storyboardName="AddItemScreenStoryboard" id="W97-bt-ijr" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSs-gx-uiv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="677" y="188"/>
+            <point key="canvasLocation" x="786" y="96"/>
         </scene>
         <!--PersonalInfoStoryboard-->
         <scene sceneID="G9e-M8-PPC">
@@ -244,7 +255,7 @@
                 <viewControllerPlaceholder storyboardName="PersonalInfoStoryboard" id="s2y-gq-eZa" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVk-id-Gzp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="661" y="-164"/>
+            <point key="canvasLocation" x="798" y="60"/>
         </scene>
     </scenes>
     <resources>

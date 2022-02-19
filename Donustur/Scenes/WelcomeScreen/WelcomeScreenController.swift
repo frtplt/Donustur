@@ -26,15 +26,12 @@ class WelcomeScreenController: UIViewController {
           guard let strongSelf = self else { return }
             
             if let e = error {
-                self.showError(message: "\(e.localizedDescription)")
+                self!.showError(message: "\(e.localizedDescription)")
             } else {
-                self.performSegue(withIdentifier: "toMainScreen", sender: self)
+                self!.performSegue(withIdentifier: "loginToMainScreen", sender: self)
             }
         }
     }
-    }
-    
-    @IBAction func registerButtonPressed(_ sender: UIButton) {
     }
     
     @IBAction func withoutMemberLogin(_ sender: UIButton) {

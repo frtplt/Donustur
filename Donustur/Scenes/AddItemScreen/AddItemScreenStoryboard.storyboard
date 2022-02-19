@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FaK-8M-4eU">
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FaK-8M-4eU">
                                 <rect key="frame" x="20" y="307" width="374" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Atık Miktarı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WTP-g1-SAi">
                                 <rect key="frame" x="20" y="494" width="374" height="34"/>
@@ -30,6 +29,9 @@
                                 <rect key="frame" x="20" y="568" width="374" height="72"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <locale key="locale" localeIdentifier="tr_TR"/>
+                                <connections>
+                                    <action selector="dateSelectedFromDatePicker:" destination="Y6W-OH-hqX" eventType="valueChanged" id="349-eb-M6d"/>
+                                </connections>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1W2-St-Y8X">
                                 <rect key="frame" x="68" y="697" width="106" height="53"/>
@@ -38,10 +40,12 @@
                                 <buttonConfiguration key="configuration" style="filled" title="İptal">
                                     <color key="baseBackgroundColor" red="0.49016976359999997" green="0.63535863159999995" blue="0.28975033760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="mBN-t1-PGD" kind="presentation" modalPresentationStyle="fullScreen" id="rV0-wP-Soy"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DÖNÜŞTÜR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="zS7-au-p0T">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="DÖNÜŞTÜR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="zS7-au-p0T">
                                 <rect key="frame" x="68" y="212" width="279.5" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
                                 <color key="textColor" red="0.49016976359999997" green="0.63535863159999995" blue="0.28975033760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -57,15 +61,36 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Ekle">
                                     <color key="baseBackgroundColor" red="0.49016976359999997" green="0.63535863159999995" blue="0.28975033760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="addItemButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="RxR-b5-y44"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="FaK-8M-4eU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="1mS-uE-cpC"/>
+                            <constraint firstItem="FaK-8M-4eU" firstAttribute="top" secondItem="zS7-au-p0T" secondAttribute="bottom" constant="35" id="2Mq-qf-7NQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FaK-8M-4eU" secondAttribute="trailing" constant="20" id="dQS-px-VfP"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addDatePickerView" destination="gro-Nd-VH5" id="FIX-li-fUx"/>
+                        <outlet property="addItemAmount" destination="WTP-g1-SAi" id="ZT1-7Q-WHC"/>
+                        <outlet property="addItemPickerView" destination="FaK-8M-4eU" id="lNl-4J-t4w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="77.678571428571431"/>
+        </scene>
+        <!--MainScreenStoryboard-->
+        <scene sceneID="s4v-r5-pjs">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainScreenStoryboard" id="mBN-t1-PGD" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Sd-ZX-7xv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="779" y="78"/>
         </scene>
     </scenes>
     <resources>

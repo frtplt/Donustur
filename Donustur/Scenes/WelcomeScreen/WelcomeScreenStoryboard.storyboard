@@ -42,7 +42,6 @@
                                     <color key="baseBackgroundColor" red="0.49016976359999997" green="0.63535863159999995" blue="0.28975033760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="registerButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="OO7-RU-wM1"/>
                                     <segue destination="Jth-aB-qww" kind="presentation" modalPresentationStyle="fullScreen" id="wHe-8v-wgc"/>
                                 </connections>
                             </button>
@@ -84,7 +83,7 @@
                                             <constraint firstAttribute="width" constant="70" id="kSd-IE-p86"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Şifre Giriniz" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y8h-9B-iFL">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="line" placeholder="Şifre Giriniz" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="y8h-9B-iFL">
                                         <rect key="frame" x="70" y="0.0" width="293" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="74" id="XWR-0v-S4i"/>
@@ -135,7 +134,7 @@
                                             <constraint firstAttribute="width" constant="70" id="rGg-GF-AMV"/>
                                         </constraints>
                                     </view>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Mail Giriniz" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qlO-B6-Jis">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="firat_p@hotmail.com" borderStyle="line" placeholder="Mail Giriniz" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qlO-B6-Jis">
                                         <rect key="frame" x="70" y="0.0" width="292" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="292" id="ohB-ph-Yhi"/>
