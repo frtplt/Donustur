@@ -170,7 +170,6 @@
                                     <color key="baseForegroundColor" systemColor="labelColor"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="withoutMemberLogin:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zX8-jK-a89"/>
                                     <segue destination="jjs-dv-EU2" kind="presentation" modalPresentationStyle="fullScreen" id="o9Y-vo-mLW"/>
                                 </connections>
                             </button>
