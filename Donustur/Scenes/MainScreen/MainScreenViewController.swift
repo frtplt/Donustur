@@ -7,10 +7,15 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class MainScreenViewController: UIViewController {
     
+    @IBOutlet weak var addItemButton: UIButton!
+    @IBOutlet weak var personButton: UIButton!
+    @IBOutlet weak var navigationButton: UIButton!
     @IBOutlet weak var itemListTableView: UITableView!
+    @IBOutlet weak var donusturButtonPressed: UIButton!
     
     var items = ["Strafor","Cam Şişe","Plastik","Bebek Bezi","Pet Şişe","Sakız","Gazete","Mendil","Pil","Plastik Tabak","Alüminyum","İzmarit","Bez Parçası","Kutu Kola","Boyalı Tahta"]
     
@@ -22,10 +27,16 @@ class MainScreenViewController: UIViewController {
     }
     
     func setupUI() {
-        
+        donusturButtonPressed.isHidden = true
+        var email = Auth.auth().currentUser?.email
+        if email?.count == nil {
+            navigationButton.isHidden = true
+            personButton.isHidden = true
+            addItemButton.isHidden = true
+            donusturButtonPressed.isHidden = false
+        }
         itemListTableView.delegate = self
         itemListTableView.dataSource = self
-        
     }
 }
 

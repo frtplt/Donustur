@@ -11,13 +11,21 @@ import Firebase
 
 class RegisterScreenController: UIViewController {
     
-    @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var mailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupUI()
+    }
+    
+    func setupUI() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     @IBAction func registerButtonPressed(_ sender: UIButton) {
@@ -26,7 +34,7 @@ class RegisterScreenController: UIViewController {
             
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let e = error {
-                    self.showError(message: "\(e.localizedDescription)")
+                    self.showError(title: "HATA", message: "\(e.localizedDescription)")
                 } else {
                     self.performSegue(withIdentifier: "toMainScreen", sender: self)
                 }

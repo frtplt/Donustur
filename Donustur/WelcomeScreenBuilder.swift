@@ -14,6 +14,5 @@ final class WelcomeScreenBuilder {
         
         let navigationViewController = storyboard.instantiateViewController(withIdentifier: "WelcomeScreenController") as! WelcomeScreenController
         return navigationViewController
-}
-    
+    }
 }

@@ -18,20 +18,29 @@ class PersonalInfoPopUpController: UIViewController {
     @IBOutlet weak var phoneNumberTextField: UITextField!
     @IBOutlet weak var addBirtdayDate: UIDatePicker!
     
-    var date = ""
+    var birthDate = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+    
+    func setupUI() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     @IBAction func dateSelectedFromDatePicker (_ : AnyObject) {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "dd-MMM-yyyy"
-            date = dateFormatter.string(from: addBirtdayDate.date)
-        }
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MMM-yyyy"
+        birthDate = dateFormatter.string(from: addBirtdayDate.date)
+    }
     
     @IBAction func cancelButtonPressed(_ sender: UIButton) {
-        
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -39,18 +48,19 @@ class PersonalInfoPopUpController: UIViewController {
         
         var personName = nameTextField.text
         var personLastName = lastNameTextField.text
-        var personBirtdayDate = date
+        var personBirtdayDate = birthDate
         var personMail = "\(Auth.auth().currentUser?.email)"
         var personPhoneNumber = phoneNumberTextField.text
         
         db.collection("PersonalInformations").addDocument(data: ["PersonName" : personName,
-                                                  "PersonLastName" : personLastName,
-                                                  "PersonBirtdayDate" : personBirtdayDate,
-                                                  "PersonMail" : personMail,
-                                                  "PersonPhoneNumber" : personPhoneNumber
-                                                 ]) { error in
+                                                                 "PersonLastName" : personLastName,
+                                                                 "PersonBirtdayDate" : personBirtdayDate,
+                                                                 "PersonMail" : personMail,
+                                                                 "PersonPhoneNumber" : personPhoneNumber,
+                                                                 "PersonSaveDate" : Date().timeIntervalSince1970
+                                                                ]) { error in
             if let e = error {
-                self.showError(message: "There was an issue saving Firestore")
+                self.showError(title: "HATA", message: "There was an issue saving Firestore")
             } else {
                 print("Succesfully saved")
             }

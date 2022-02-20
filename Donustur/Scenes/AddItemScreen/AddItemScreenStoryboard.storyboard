@@ -16,36 +16,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FaK-8M-4eU">
+                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FaK-8M-4eU">
                                 <rect key="frame" x="20" y="307" width="374" height="153"/>
                             </pickerView>
-                            <textField opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Atık Miktarı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WTP-g1-SAi">
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Atık Miktarı" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WTP-g1-SAi">
                                 <rect key="frame" x="26" y="481" width="374" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="WTP-g1-SAi" secondAttribute="height" multiplier="11:1" id="PI9-uo-ShB"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="gro-Nd-VH5">
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="gro-Nd-VH5">
                                 <rect key="frame" x="26" y="541" width="374" height="57"/>
                                 <locale key="locale" localeIdentifier="tr_TR"/>
                                 <connections>
                                     <action selector="dateSelectedFromDatePicker:" destination="Y6W-OH-hqX" eventType="valueChanged" id="349-eb-M6d"/>
                                 </connections>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1W2-St-Y8X">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1W2-St-Y8X">
                                 <rect key="frame" x="68" y="665" width="106" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="106" id="GBd-Ff-WUX"/>
                                     <constraint firstAttribute="height" constant="53" id="sdg-Rz-bgE"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="İptal">
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Geri">
+                                            <attributes>
+                                                <font key="NSFont" size="18" name="Helvetica-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                     <color key="baseBackgroundColor" red="0.49016976359999997" green="0.63535863159999995" blue="0.28975033760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <segue destination="mBN-t1-PGD" kind="presentation" modalPresentationStyle="fullScreen" id="rV0-wP-Soy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DÖNÜŞTÜR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="zS7-au-p0T">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="DÖNÜŞTÜR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="40" translatesAutoresizingMaskIntoConstraints="NO" id="zS7-au-p0T">
                                 <rect key="frame" x="68" y="212" width="279.5" height="60"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="50"/>
                                 <color key="textColor" red="0.49016976359999997" green="0.63535863159999995" blue="0.28975033760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -57,14 +67,21 @@
                                     <constraint firstAttribute="width" secondItem="MSi-6i-4ZS" secondAttribute="height" multiplier="15:8" id="Gcy-uZ-dKN"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29Q-lo-LWV">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="29Q-lo-LWV">
                                 <rect key="frame" x="241" y="665" width="106" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="53" id="qWx-zC-Y54"/>
                                     <constraint firstAttribute="width" constant="106" id="rMA-aF-bb6"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Ekle">
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Ekle">
+                                            <attributes>
+                                                <font key="NSFont" size="18" name="Helvetica-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                     <color key="baseBackgroundColor" red="0.49016976359999997" green="0.63535863159999995" blue="0.28975033760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -78,6 +95,7 @@
                             <constraint firstItem="29Q-lo-LWV" firstAttribute="leading" secondItem="1W2-St-Y8X" secondAttribute="trailing" constant="67" id="16M-06-7MJ"/>
                             <constraint firstItem="FaK-8M-4eU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="1mS-uE-cpC"/>
                             <constraint firstItem="WTP-g1-SAi" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="26" id="BDJ-K0-gcO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="1W2-St-Y8X" secondAttribute="bottom" constant="144" id="FCc-Eq-TUO"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="MSi-6i-4ZS" secondAttribute="trailing" constant="87" id="FRu-Ap-wlw"/>
                             <constraint firstItem="zS7-au-p0T" firstAttribute="top" secondItem="MSi-6i-4ZS" secondAttribute="bottom" constant="16" id="G8Z-sq-9mi"/>
                             <constraint firstItem="zS7-au-p0T" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="68" id="GPl-z5-Exo"/>
@@ -89,6 +107,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="gro-Nd-VH5" secondAttribute="trailing" constant="14" id="fYw-f3-1ci"/>
                             <constraint firstItem="1W2-St-Y8X" firstAttribute="top" secondItem="gro-Nd-VH5" secondAttribute="bottom" constant="67" id="iCz-td-fSs"/>
                             <constraint firstItem="FaK-8M-4eU" firstAttribute="top" secondItem="zS7-au-p0T" secondAttribute="bottom" constant="35" id="ifD-CH-pmj"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="29Q-lo-LWV" secondAttribute="bottom" constant="144" id="p3z-cf-XbO"/>
                             <constraint firstItem="gro-Nd-VH5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="26" id="qLX-rX-Vio"/>
                             <constraint firstItem="gro-Nd-VH5" firstAttribute="top" secondItem="WTP-g1-SAi" secondAttribute="bottom" constant="26" id="sr1-YV-rZb"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zS7-au-p0T" secondAttribute="trailing" constant="66.5" id="uRs-Pu-0Oc"/>

@@ -17,7 +17,7 @@ class AddItemScreenController: UIViewController {
     
     let db = Firestore.firestore()
     
-    var category = ""
+    var category = "Kağıt"
     var date = ""
     var categories = ["Kağıt","Pil","Plastik","Yağ","Cam","Tıbbi"]
     var ıtemScore = 0.0
@@ -25,7 +25,6 @@ class AddItemScreenController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        
     }
     
     @IBAction func dateSelectedFromDatePicker (_ : AnyObject) {
@@ -37,6 +36,13 @@ class AddItemScreenController: UIViewController {
     func setupUI() {
         addItemPickerView.delegate = self
         addItemPickerView.dataSource = self
+    
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     func setup() {
@@ -63,7 +69,7 @@ class AddItemScreenController: UIViewController {
         var ıtemDate = date
         var ıtemSender = "\(Auth.auth().currentUser?.email)"
         setup()
-    
+        
         db.collection("Items").addDocument(data: ["ItemAmount" : ıtemAmount,
                                                   "ItemCategory" : ıtemCategory,
                                                   "ItemDate" : ıtemDate,
@@ -72,11 +78,12 @@ class AddItemScreenController: UIViewController {
                                                   
                                                  ]) { error in
             if let e = error {
-                self.showError(message: "There was an issue saving Firestore")
+                self.showError(title: "HATA", message: "There was an issue saving Firestore")
             } else {
                 print("Succesfully saved")
             }
         }
+        showError(title: "Eklendi", message: "Dönüşüm talebiniz kaydedildi")
     }
 }
 

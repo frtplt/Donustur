@@ -10,7 +10,6 @@
 		26413D618A59F9D47BA40795 /* Pods_Donustur.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C525075B411164BB4A5EB6C /* Pods_Donustur.framework */; };
 		719F297227C01057002A69CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719F297127C01057002A69CB /* AppDelegate.swift */; };
 		719F297427C01057002A69CB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719F297327C01057002A69CB /* SceneDelegate.swift */; };
-		719F297627C01057002A69CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719F297527C01057002A69CB /* ViewController.swift */; };
 		719F297B27C01058002A69CB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 719F297A27C01058002A69CB /* Assets.xcassets */; };
 		719F297E27C01058002A69CB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 719F297C27C01058002A69CB /* LaunchScreen.storyboard */; };
 		719F298627C013C5002A69CB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 719F298527C013C5002A69CB /* GoogleService-Info.plist */; };
@@ -36,6 +35,7 @@
 		71AF2B1F27C1384300701B52 /* PersonalInfoPopUpStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71AF2B1E27C1384300701B52 /* PersonalInfoPopUpStoryboard.storyboard */; };
 		71AF2B2127C1385000701B52 /* PersonalInfoPopUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AF2B2027C1385000701B52 /* PersonalInfoPopUpController.swift */; };
 		71AF2B2327C1453500701B52 /* PersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AF2B2227C1453500701B52 /* PersonModel.swift */; };
+		71B0CF7427C1FD9800FCB919 /* AddItemInformationsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71B0CF7327C1FD9800FCB919 /* AddItemInformationsStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +44,6 @@
 		719F296E27C01057002A69CB /* Donustur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Donustur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		719F297127C01057002A69CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		719F297327C01057002A69CB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		719F297527C01057002A69CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		719F297A27C01058002A69CB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		719F297D27C01058002A69CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		719F297F27C01058002A69CB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,6 +70,7 @@
 		71AF2B1E27C1384300701B52 /* PersonalInfoPopUpStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PersonalInfoPopUpStoryboard.storyboard; sourceTree = "<group>"; };
 		71AF2B2027C1385000701B52 /* PersonalInfoPopUpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInfoPopUpController.swift; sourceTree = "<group>"; };
 		71AF2B2227C1453500701B52 /* PersonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonModel.swift; sourceTree = "<group>"; };
+		71B0CF7327C1FD9800FCB919 /* AddItemInformationsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddItemInformationsStoryboard.storyboard; sourceTree = "<group>"; };
 		B249D3B827CE5D2EA5EEF0AE /* Pods-Donustur.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Donustur.release.xcconfig"; path = "Target Support Files/Pods-Donustur/Pods-Donustur.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,14 +126,13 @@
 			children = (
 				71AF2B1027C0E25700701B52 /* Extensions */,
 				719F298727C01941002A69CB /* Scenes */,
+				719F298E27C03275002A69CB /* WelcomeScreenBuilder.swift */,
 				719F297127C01057002A69CB /* AppDelegate.swift */,
 				719F297327C01057002A69CB /* SceneDelegate.swift */,
-				719F297527C01057002A69CB /* ViewController.swift */,
 				719F297A27C01058002A69CB /* Assets.xcassets */,
 				719F297C27C01058002A69CB /* LaunchScreen.storyboard */,
 				719F297F27C01058002A69CB /* Info.plist */,
 				719F298527C013C5002A69CB /* GoogleService-Info.plist */,
-				719F298E27C03275002A69CB /* WelcomeScreenBuilder.swift */,
 			);
 			path = Donustur;
 			sourceTree = "<group>";
@@ -184,6 +183,7 @@
 			children = (
 				71AF2B0527C0C9D500701B52 /* AddItemScreenController.swift */,
 				71AF2B0327C0C82E00701B52 /* AddItemScreenStoryboard.storyboard */,
+				71B0CF7327C1FD9800FCB919 /* AddItemInformationsStoryboard.storyboard */,
 			);
 			path = AddItemScreen;
 			sourceTree = "<group>";
@@ -298,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71AF2B1B27C12CBD00701B52 /* MapScreenStoryboard.storyboard in Resources */,
+				71B0CF7427C1FD9800FCB919 /* AddItemInformationsStoryboard.storyboard in Resources */,
 				719F299627C049D7002A69CB /* MainScreenStoryboard.storyboard in Resources */,
 				71AF2B1F27C1384300701B52 /* PersonalInfoPopUpStoryboard.storyboard in Resources */,
 				71AF2B1827C1279600701B52 /* TableViewCell.xib in Resources */,
@@ -362,7 +363,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				71AF2B1727C1279600701B52 /* TableViewCell.swift in Sources */,
-				719F297627C01057002A69CB /* ViewController.swift in Sources */,
 				719F297227C01057002A69CB /* AppDelegate.swift in Sources */,
 				71AF2B2327C1453500701B52 /* PersonModel.swift in Sources */,
 				71AF2B1427C0E9E000701B52 /* ItemModel.swift in Sources */,

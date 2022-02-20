@@ -37,29 +37,15 @@ class PersonalInfoScreenController: UIViewController {
         loadItems()
     }
     
-    @IBAction func backButtonPressed(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     func setupUI() {
-        
-        /*if self.personalInformations[0].eMail.count =! Auth.auth().currentUser?.email?.count {
             DispatchQueue.main.async {
-                self.nameLabel.text = "Ad: Ekle Butonuna Basınız"
-                self.lastNameLabel.text = "Soyad: Ekle Butonuna Basınız"
-                self.birthdayLabel.text = "Doğum Tarihi: Ekle Butonuna Basınız"
-                self.mailLabel.text = "E-Mail: Ekle Butonuna Basınız"
-                self.phoneNumberLabel.text = "Telefon No: Ekle Butonuna Basınız"
-            }*/
-        
-        DispatchQueue.main.async {
-            self.nameLabel.text = "Ad: \(self.personalInformations[0].name)"
-            self.lastNameLabel.text = "Soyad: \(self.personalInformations[0].lastName)"
-            self.birthdayLabel.text = "Doğum Tarihi: \(self.personalInformations[0].birtdayDate)"
-            self.mailLabel.text = "E-Mail: \(self.personalInformations[0].eMail)"
-            self.phoneNumberLabel.text = "Telefon No: \(self.personalInformations[0].phoneNumber)"
+                self.nameLabel.text = "Ad: \(self.personalInformations[0].name)"
+                self.lastNameLabel.text = "Soyad: \(self.personalInformations[0].lastName)"
+                self.birthdayLabel.text = "Doğum Tarihi: \(self.personalInformations[0].birtdayDate)"
+                self.mailLabel.text = "E-Mail: \(self.personalInformations[0].eMail)"
+                self.phoneNumberLabel.text = "Telefon No: \(self.personalInformations[0].phoneNumber)"
+            }
         }
-    }
     
     func setup() {
         self.locationLabel.text = "Adres: Latitude: \(self.personMapInfos[0].locationLatitude), Longitude: \(self.personMapInfos[0].locationLongitude)"
@@ -70,14 +56,14 @@ class PersonalInfoScreenController: UIViewController {
         for i in 0..<personScoreInfo.count {
             
             totalScore += self.personScoreInfo[i].totalScore
-            
             self.totalScoreLabel.text = "Toplam Puan: \(totalScore)"
         }
     }
     
     func loadItems() {
-        
-        db.collection("PersonalInformations").addSnapshotListener { (querySnapshot, error) in
+        db.collection("PersonalInformations")
+            .order(by: "PersonSaveDate")
+            .addSnapshotListener { (querySnapshot, error) in
             
             self.personalInformations = []
             
@@ -92,7 +78,7 @@ class PersonalInfoScreenController: UIViewController {
                         let personBirtdayDate = data["PersonBirtdayDate"]
                         let personMail = data["PersonMail"]
                         let personPhoneNumber = data["PersonPhoneNumber"]
-                        let newItem = PersonModel(name: personName as! String, lastName: personLastName as! String, eMail: personMail as! String, birtdayDate: personBirtdayDate as! String, phoneNumber: personPhoneNumber as! String)
+                        let newItem = PersonModel(name: personName as! String, lastName: personLastName as! String, eMail: personMail as? String ?? "", birtdayDate: personBirtdayDate as! String, phoneNumber: personPhoneNumber as! String)
                         self.personalInformations.insert(newItem, at: 0)
                         self.setupUI()
                     }
@@ -102,8 +88,8 @@ class PersonalInfoScreenController: UIViewController {
     }
     
     func loadTotalScore() {
-        
         db.collection("Items")
+            .order(by: "ItemSender")
             .order(by: "ItemDate")
             .addSnapshotListener { (querySnapshot, error) in
                 
@@ -116,11 +102,11 @@ class PersonalInfoScreenController: UIViewController {
                         for doc in snapshotDocuments {
                             let data = doc.data()
                             let personTotalScore = data["ItemScore"]
+                            let ıtemSender = data["ItemSender"]
                             
-                            let newItem = PersonTotalScore(totalScore: personTotalScore as? Double ?? 0.0)
-                            self.personScoreInfo.append(newItem)
+                            let newItem = PersonTotalScore(totalScore: personTotalScore as? Double ?? 0.0, itemSender: ıtemSender as? String ?? "")
+                            self.personScoreInfo.insert(newItem, at: 0)
                             self.setupScoreLabel()
-                            
                         }
                     }
                 }
@@ -128,8 +114,9 @@ class PersonalInfoScreenController: UIViewController {
     }
     
     func loadMapInfo() {
-        
-        db.collection("MapInformations").addSnapshotListener { (querySnapshot, error) in
+        db.collection("MapInformations")
+            .order(by: "PersonSaveDate")
+            .addSnapshotListener { (querySnapshot, error) in
             
             self.personMapInfos = []
             
@@ -142,7 +129,7 @@ class PersonalInfoScreenController: UIViewController {
                         let personLocationLatitude = data["ItemLatitude"]
                         let personLocationLongitude = data["ItemLongitude"]
                         let newItem = PersonModelMapInfo(locationLatitude: personLocationLatitude as? Double ?? 0.0, locationLongitude: personLocationLongitude as? Double ?? 0.0)
-                        self.personMapInfos.append(newItem)
+                        self.personMapInfos.insert(newItem, at: 0)
                         self.setup()
                     }
                 }

@@ -39,7 +39,6 @@ class MapScreenController: UIViewController, MKMapViewDelegate {
     @objc func chooseLocation(gestureRecognizer:UILongPressGestureRecognizer) {
         
         if gestureRecognizer.state == .began {
-            
             let touchedPoint = gestureRecognizer.location(in: self.mapView)
             let touchedCoordinates = self.mapView.convert(touchedPoint, toCoordinateFrom: self.mapView)
             
@@ -60,9 +59,10 @@ class MapScreenController: UIViewController, MKMapViewDelegate {
         db.collection("MapInformations").addDocument(data: ["ItemLatitude" : itemLatitude,
                                                             "ItemLongitude" : itemLongitude,
                                                             "ItemSender" : itemSender,
+                                                            "PersonSaveDate" : Date().timeIntervalSince1970
                                                            ]) { error in
             if let e = error {
-                self.showError(message: "There was an issue saving Firestore")
+                self.showError(title: "HATA", message: "There was an issue saving Firestore")
             } else {
                 print("Succesfully saved")
             }

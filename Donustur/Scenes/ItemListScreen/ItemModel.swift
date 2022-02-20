@@ -8,7 +8,6 @@
 import Foundation
 
 struct ItemModel {
-    
     let category: String
     let amount: String
     let score: Double

@@ -15,7 +15,7 @@
                 <viewControllerPlaceholder storyboardName="MapScreenStoryboard" id="GDA-fF-hKn" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Skn-NH-pdQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-360" y="-175"/>
+            <point key="canvasLocation" x="694" y="150"/>
         </scene>
         <!--Main Screen View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -123,6 +123,25 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZwN-om-qHq">
+                                <rect key="frame" x="119" y="818" width="177" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Dönüştür">
+                                            <attributes>
+                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="18" name="Helvetica-Bold"/>
+                                                <font key="NSOriginalFont" size="18" name="Helvetica-Bold"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseBackgroundColor" red="0.49016976359999997" green="0.63535863159999995" blue="0.28975033760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="4cD-t1-RId" kind="presentation" modalPresentationStyle="fullScreen" id="ObT-uJ-drB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -133,6 +152,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZeJ-kt-JTF" secondAttribute="trailing" constant="11" id="DHe-9r-aqK"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="9dy-Cn-ktV" secondAttribute="trailing" constant="20" id="NTw-7x-VwA"/>
                             <constraint firstItem="9dy-Cn-ktV" firstAttribute="top" secondItem="ZeJ-kt-JTF" secondAttribute="bottom" constant="17" id="Ry5-r2-4Q8"/>
+                            <constraint firstItem="9dy-Cn-ktV" firstAttribute="leading" secondItem="ZwN-om-qHq" secondAttribute="trailing" constant="44" id="ajK-sV-YhQ"/>
                             <constraint firstItem="Wm4-Vb-e2U" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="leJ-cS-KKt"/>
                             <constraint firstItem="Wm4-Vb-e2U" firstAttribute="leading" secondItem="pq4-ct-e5N" secondAttribute="trailing" constant="42" id="mnN-mi-AXV"/>
                             <constraint firstItem="Wm4-Vb-e2U" firstAttribute="leading" secondItem="M0k-TX-2eL" secondAttribute="trailing" constant="267" id="p7W-ns-kYx"/>
@@ -141,24 +161,37 @@
                             <constraint firstItem="pq4-ct-e5N" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="10" id="prR-Tx-8Xn"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="9dy-Cn-ktV" secondAttribute="bottom" constant="3" id="qI4-Qr-IHN"/>
                             <constraint firstItem="M0k-TX-2eL" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="vGX-Ge-9ei"/>
+                            <constraint firstItem="ZwN-om-qHq" firstAttribute="top" secondItem="ZeJ-kt-JTF" secondAttribute="bottom" constant="18" id="xlv-HQ-OVu"/>
                             <constraint firstItem="ZeJ-kt-JTF" firstAttribute="top" secondItem="Wm4-Vb-e2U" secondAttribute="bottom" constant="19" id="yRb-4n-MvL"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addItemButton" destination="9dy-Cn-ktV" id="qXM-5g-btb"/>
+                        <outlet property="donusturButtonPressed" destination="ZwN-om-qHq" id="gy6-bF-LGz"/>
                         <outlet property="itemListTableView" destination="ZeJ-kt-JTF" id="Ik3-Fn-XXC"/>
+                        <outlet property="navigationButton" destination="M0k-TX-2eL" id="XFT-Su-921"/>
+                        <outlet property="personButton" destination="Wm4-Vb-e2U" id="Axh-KW-ila"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="77.678571428571431"/>
+            <point key="canvasLocation" x="89.855072463768124" y="168.75"/>
         </scene>
-        <!--AddItemScreenStoryboard-->
+        <!--AddItemInformationsStoryboard-->
         <scene sceneID="qCS-h3-Yum">
             <objects>
-                <viewControllerPlaceholder storyboardName="AddItemScreenStoryboard" id="W97-bt-ijr" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="AddItemInformationsStoryboard" id="W97-bt-ijr" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSs-gx-uiv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="810" y="97"/>
+            <point key="canvasLocation" x="738" y="214"/>
+        </scene>
+        <!--RegisterScreenStoryboard-->
+        <scene sceneID="pNn-Pd-0ex">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RegisterScreenStoryboard" id="4cD-t1-RId" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cqs-kG-OHy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="714" y="183"/>
         </scene>
         <!--PersonalInfoStoryboard-->
         <scene sceneID="G9e-M8-PPC">
@@ -166,7 +199,7 @@
                 <viewControllerPlaceholder storyboardName="PersonalInfoStoryboard" id="s2y-gq-eZa" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HVk-id-Gzp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="798" y="60"/>
+            <point key="canvasLocation" x="701" y="118"/>
         </scene>
     </scenes>
     <resources>

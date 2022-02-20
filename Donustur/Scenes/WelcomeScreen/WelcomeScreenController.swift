@@ -16,24 +16,30 @@ class WelcomeScreenController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+    
+    func setupUI() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        
         if let email = mailTextField.text, let password = passwordTextField.text {
             
-        Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
-          guard let strongSelf = self else { return }
-            
-            if let e = error {
-                self!.showError(message: "\(e.localizedDescription)")
-            } else {
-                self!.performSegue(withIdentifier: "loginToMainScreen", sender: self)
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                guard let strongSelf = self else { return }
+                
+                if let e = error {
+                    self!.showError(title: "HATA", message: "\(e.localizedDescription)")
+                } else {
+                    self!.performSegue(withIdentifier: "loginToMainScreen", sender: self)
+                }
             }
         }
-    }
-    }
-    
-    @IBAction func withoutMemberLogin(_ sender: UIButton) {
     }
 }

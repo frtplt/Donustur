@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="558"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2G-KI-wDq">
-                                <rect key="frame" x="134" y="693" width="147" height="67"/>
+                                <rect key="frame" x="247" y="691" width="147" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="67" id="6Ci-Mh-7nm"/>
                                 </constraints>
@@ -39,17 +39,42 @@
                                     <action selector="saveButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GNv-du-ztr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Alp-D2-JuE">
+                                <rect key="frame" x="20" y="691" width="147" height="67"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="67" id="OGa-Ik-TDa"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Geri">
+                                            <attributes>
+                                                <font key="NSFont" size="24" name="Helvetica-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="baseBackgroundColor" red="0.49016976359999997" green="0.63535863159999995" blue="0.28975033760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="2wc-sC-ZXt" kind="presentation" modalPresentationStyle="fullScreen" id="aHT-3z-Ekp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="8tM-Sn-WOg" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="2YT-F5-yjh"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="J2G-KI-wDq" secondAttribute="trailing" constant="133" id="3nZ-SG-V3I"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="J2G-KI-wDq" secondAttribute="trailing" constant="20" id="3nZ-SG-V3I"/>
                             <constraint firstItem="8tM-Sn-WOg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Txo-nH-rYd"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Alp-D2-JuE" secondAttribute="bottom" constant="104" id="Z7D-lg-txg"/>
+                            <constraint firstItem="J2G-KI-wDq" firstAttribute="leading" secondItem="Alp-D2-JuE" secondAttribute="trailing" constant="80" id="bob-h2-we8"/>
+                            <constraint firstItem="Alp-D2-JuE" firstAttribute="top" secondItem="8tM-Sn-WOg" secondAttribute="bottom" constant="89" id="gyR-I2-TtM"/>
                             <constraint firstItem="8tM-Sn-WOg" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="hKL-Bn-kJp"/>
-                            <constraint firstItem="J2G-KI-wDq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="134" id="sxn-iD-pvL"/>
-                            <constraint firstItem="J2G-KI-wDq" firstAttribute="top" secondItem="8tM-Sn-WOg" secondAttribute="bottom" constant="91" id="w3m-0K-NOH"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="J2G-KI-wDq" secondAttribute="bottom" constant="102" id="zPA-nQ-5RP"/>
+                            <constraint firstItem="J2G-KI-wDq" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="247" id="sxn-iD-pvL"/>
+                            <constraint firstItem="J2G-KI-wDq" firstAttribute="top" secondItem="8tM-Sn-WOg" secondAttribute="bottom" constant="89" id="w3m-0K-NOH"/>
+                            <constraint firstItem="Alp-D2-JuE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="x4y-bX-6QZ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="J2G-KI-wDq" secondAttribute="bottom" constant="104" id="zPA-nQ-5RP"/>
                         </constraints>
                     </view>
                     <connections>
@@ -59,6 +84,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="71.651785714285708"/>
+        </scene>
+        <!--MainScreenStoryboard-->
+        <scene sceneID="6b6-If-UBq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainScreenStoryboard" id="2wc-sC-ZXt" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FAD-IT-Cko" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="742" y="72"/>
         </scene>
     </scenes>
     <resources>

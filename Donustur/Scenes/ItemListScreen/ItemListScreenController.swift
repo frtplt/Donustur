@@ -14,7 +14,6 @@ class ItemListScreenController: UIViewController {
     @IBOutlet weak var itemListTableView: UITableView!
     
     var ıtemModel = [ItemModel]()
-    
     let db = Firestore.firestore()
     
     override func viewDidLoad() {
@@ -33,10 +32,9 @@ class ItemListScreenController: UIViewController {
     }
     
     func loadItems() {
-            
-            db.collection("Items")
+        db.collection("Items")
             .order(by: "ItemDate")
-                .addSnapshotListener { (querySnapshot, error) in
+            .addSnapshotListener { (querySnapshot, error) in
                 
                 self.ıtemModel = []
                 
@@ -52,18 +50,18 @@ class ItemListScreenController: UIViewController {
                             let ıtemDate = data["ItemDate"]
                             let ıtemScore = data["ItemScore"]
                             let newItem = ItemModel(category: ıtemCategory as! String, amount: ıtemAmount as! String, score: ıtemScore as! Double, date: ıtemDate as! String, sender: ıtemSender as! String)
-                                self.ıtemModel.append(newItem)
-                                
-                                DispatchQueue.main.async {
-                                    self.itemListTableView.reloadData()
-                                    let indexPath = IndexPath(row: self.ıtemModel.count - 1, section: 0)
-                                    self.itemListTableView.scrollToRow(at: indexPath, at: .top, animated: false)
+                            self.ıtemModel.append(newItem)
+                            
+                            DispatchQueue.main.async {
+                                self.itemListTableView.reloadData()
+                                let indexPath = IndexPath(row: self.ıtemModel.count - 1, section: 0)
+                                self.itemListTableView.scrollToRow(at: indexPath, at: .top, animated: false)
                             }
                         }
                     }
                 }
             }
-        }
+    }
 }
 
 extension ItemListScreenController: UITableViewDelegate, UITableViewDataSource {
@@ -81,7 +79,6 @@ extension ItemListScreenController: UITableViewDelegate, UITableViewDataSource {
         cell.miktarLabel.text = ıtemModel[indexPath.row].amount
         
         return cell
-        
     }
 }
 

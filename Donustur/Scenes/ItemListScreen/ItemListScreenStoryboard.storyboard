@@ -49,6 +49,20 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwQ-nd-wUr">
+                                <rect key="frame" x="20" y="44" width="59" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="iJS-8l-uZp"/>
+                                    <constraint firstAttribute="width" constant="59" id="o6v-df-P5e"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Geri">
+                                    <color key="baseBackgroundColor" red="0.49016976359999997" green="0.63535863159999995" blue="0.28975033760000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="doU-0X-Eyc" kind="presentation" modalPresentationStyle="fullScreen" id="ikU-oF-tlf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -62,6 +76,8 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iMl-42-Ec5" secondAttribute="trailing" constant="31" id="OJu-PN-c4a"/>
                             <constraint firstItem="8fe-zp-gXq" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="68" id="VYl-TT-fMM"/>
                             <constraint firstItem="CHl-oi-kP3" firstAttribute="top" secondItem="iMl-42-Ec5" secondAttribute="bottom" constant="5.5" id="Vyq-rc-i1u"/>
+                            <constraint firstItem="cwQ-nd-wUr" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="XCc-kw-Lsk"/>
+                            <constraint firstItem="cwQ-nd-wUr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="Xib-BX-hcM"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="8fe-zp-gXq" secondAttribute="trailing" constant="87" id="dzz-6s-nFW"/>
                             <constraint firstItem="byk-xs-QvT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="f4Z-NM-82Z"/>
                             <constraint firstItem="byk-xs-QvT" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="lbN-8b-tm3"/>
@@ -76,6 +92,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="77.678571428571431"/>
+        </scene>
+        <!--PersonalInfoStoryboard-->
+        <scene sceneID="cEP-ay-b1D">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PersonalInfoStoryboard" id="doU-0X-Eyc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mal-NH-bZc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="709" y="78"/>
         </scene>
     </scenes>
     <resources>
