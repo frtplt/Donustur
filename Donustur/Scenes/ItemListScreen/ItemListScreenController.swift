@@ -74,9 +74,9 @@ extension ItemListScreenController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
         
         cell.tarihLabel.text = ıtemModel[indexPath.row].date
-        cell.puanLabel.text = "\(ıtemModel[indexPath.row].score)"
+        cell.puanLabel.text = "Puan: \(ıtemModel[indexPath.row].score)"
         cell.kategoryLabel.text = ıtemModel[indexPath.row].category
-        cell.miktarLabel.text = ıtemModel[indexPath.row].amount
+        cell.miktarLabel.text = "Miktar: \(ıtemModel[indexPath.row].amount)"
         
         return cell
     }
